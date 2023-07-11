@@ -1,0 +1,21 @@
+{
+    "name": "rhclc/hacks-puebla",
+    "description": "Hack Puebla",
+    "authors": [
+        {
+            "name": "RogerHdzC",
+            "email": "92351154+RogerHdzC@users.noreply.github.com"
+        }
+    ],
+    "require": {
+        "intervention/image": "^2.7",
+        "phpmailer/phpmailer": "^6.8"
+    },
+    "autoload": {
+        "psr-4": {
+            "Model\\" : "./models",
+            "MVC\\" : "./",
+            "Controllers\\" : "./controllers"
+        }
+    }
+}
