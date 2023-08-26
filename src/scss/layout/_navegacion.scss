@@ -1,0 +1,98 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.barra {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Alinea el contenido en el centro vertical y horizontal */
+    padding-top: 1rem;
+
+    #logo img {
+        /* Ajusta el ancho y la altura de la imagen según tus necesidades */
+        width: 10rem; /* Puedes cambiar este valor para disminuir el ancho */
+        height: auto; /* El valor 'auto' mantiene la relación de aspecto original */
+    }
+
+    @include m.tablet {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.derecha {
+    display: flex;
+    flex-direction: row; /* Alinea los elementos en una fila */
+    align-items: center; /* Alinea los elementos verticalmente */
+    filter: invert(100%);
+    justify-content: center; /* Alinea el contenido en el centro horizontal */
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    @include m.tablet {
+        justify-content: flex-end; /* Alinea los elementos hacia la derecha */
+        flex-grow: 1; /* Permite que el div ocupe el espacio restante */
+        padding-right: 2rem; /* Agrega un espacio a la derecha */
+    }
+}
+
+.navegacion {
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+    transition: visibility .3s ease-in-out, opacity 0.5s linear, height 0.5s linear;
+
+    @include m.tablet {
+            width: 100%;
+            display: flex;
+            justify-content: center; /* Centra horizontalmente el contenido */
+            align-items: center;
+            opacity: 1;
+            visibility: visible;
+    }
+    a {
+        color: v.$negro;
+        text-decoration: none;
+        font-size: 2.5rem;
+        font-weight: bold;
+        display: block;
+        text-align: center;
+
+        
+        @include m.tablet {
+            margin-right: 2rem;
+            font-size: 2.2rem;
+            
+            &:last-of-type {
+                margin-right: 0;
+            }
+        }
+        
+        @include m.desktop{
+            margin-right: 2rem;
+            font-size: 3rem;
+            
+        }
+    }
+}
+
+/**MENU HAMBURGUESA**/
+
+.mobile-menu {
+    @include m.tablet {
+        display: none;
+    }
+
+    img {
+        width: 5rem;
+    }
+}
+
+.mostrar {
+    visibility: visible;
+    opacity: 1;
+    height: auto;
+}

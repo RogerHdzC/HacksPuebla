@@ -1,0 +1,45 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.faq {
+    h1{
+        color: v.$naranja;
+    }
+
+    .contenedor-preguntas {
+        max-width: 30rem; /* Puedes cambiar este valor según tus necesidades */
+        margin: 0 auto; /* Centrar el div de pregunta horizontalmente dentro del contenedor */
+        border-radius: 0.4rem;
+        @include m.desktop {
+            min-width: 100rem;
+        }
+        @include m.tablet {
+            max-width: 60rem;
+        }
+        h3, p{
+            font-size: 2.5rem;
+        }
+
+        .pregunta{
+            padding: 2rem 0.5rem 0.5rem 0.5rem;
+            margin: 2rem 0;
+            background-color: v.$azul;
+            cursor: pointer;
+        }
+
+        .respuesta{
+            background-color: darken($color: v.$azul, $amount: 9);
+            margin-top: 1rem; /* Puedes ajustar este valor según tus necesidades */
+            margin-bottom: 1rem; /* Puedes ajustar este valor según tus necesidades */
+            padding: 0 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+    }
+
+    .cerrado {
+        display: none;
+    }
+
+
+}

@@ -1,0 +1,44 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.sponsors {
+    h1 {
+        color: v.$naranja;
+    }
+    .logo {
+        padding-bottom: calc(v.$separacion/4) ;
+    }
+    @include m.tablet {
+        padding: 0;
+        margin: 0;
+        .sponsor{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* 2 columnas de igual ancho */
+            gap: 20px; /* Espacio entre las filas y columnas */   
+            /* Estilos para los logos impares */
+            .logo {
+                text-align: left; /* Alinear el contenido del logo a la izquierda */
+            }
+            .logo:nth-child(1) {
+                grid-row: 1; /* El primer logo ocupa la fila 1 */
+                grid-column: 1; /* El primer logo ocupa la columna 1 */
+            }
+            .logo:nth-child(2) {
+                grid-row: 1; /* El segundo logo ocupa la fila 1 */
+                grid-column: 2; /* El segundo logo ocupa la columna 2 */
+                height: 25rem;
+            }
+            
+            .logo:nth-child(3) {
+                grid-row: 2; /* El tercer logo ocupa la fila 2 */
+                grid-column: 1; /* El tercer logo ocupa la columna 1 */
+            }
+            
+            .logo:nth-child(4) {
+                grid-row: 3; /* El cuarto logo ocupa la fila 2 */
+                grid-column: 2; /* El cuarto logo ocupa la columna 2 */
+            }
+            
+        }
+    }
+}

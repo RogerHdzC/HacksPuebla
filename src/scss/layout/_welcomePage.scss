@@ -1,6 +1,56 @@
-.no-webp .inicio {
-    background-image: url(../img/bkg.png);
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+
+.welcome_page {
+        background-image: url(../img/bkg.png);
+        background-position: center center;
+        background-size:cover;
+        height: 75rem;
+        @include m.tablet {
+            background-image: url(../img/IMG_5916.jpg);
+            background-position: center center;
+            background-size:cover;
+            height: auto;
+            
+        }
+
+        /* Estilos para el contenedor del botón */
+.contenido-welcompe_page {
+    text-align: center; /* Alinear el contenido del contenedor al centro */
 }
-.webp .inicio {
-    background-image: url(../img/bkg.webp);
+
+        display: flex;
+        justify-content: center; /* Centrar horizontalmente */
+        
+        .imagen {
+            display: flex;
+            padding-top: 5rem;
+            justify-content: center; /* Centrar horizontalmente */
+            align-items: center; /* Centrar verticalmente */
+            /* También puedes usar solo 'align-items: center;' si solo deseas centrar verticalmente */
+            img {
+                width: 22rem;
+                height: 16rem;
+                @include m.tablet {
+                    width: 44rem;
+                    height: 32rem;
+                }
+            }
+        }
+        .separacion {
+            padding-top: 20rem;
+        }
+        .boton {
+            display: inline-block;
+            background-color: v.$azul; /* Color de fondo */
+            border-radius: 5px; /* Bordes redondeados */
+            font-weight: bold; /* Negrita para el texto */
+            text-align: center;
+            font-family: v.$fuente_principal;
+            font-size: 27px;
+            font-style: italic;
+            font-weight: 900;
+            line-height: normal;
+        }
 }
